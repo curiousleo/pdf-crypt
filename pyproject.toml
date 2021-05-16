@@ -11,6 +11,8 @@ black = "^21.5b0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+rope = "^0.19.0"
+black = {version = "^21.5b0", allow-prereleases = true}
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
