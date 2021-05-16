@@ -1,3 +1,6 @@
+/.vscode/
 /Lib/
 /Scripts/
+/build/
 /dist/
+__pycache__/
