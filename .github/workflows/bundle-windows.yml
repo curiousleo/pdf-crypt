@@ -1,5 +1,5 @@
-name: dist-windows
-on: [push]
+name: Bundle for Windows
+on: release
 jobs:
   dist:
     runs-on: windows-latest
@@ -20,12 +20,9 @@ jobs:
       - name: Install project dependencies
         shell: powershell
         run: C:/poetry/bin/poetry.bat install
-      #- name: Check formatting with Black
-      #  shell: powershell
-      #  run: C:/poetry/bin/poetry.bat run black --check .
-      - name: Run PyInstaller
+      - name: Bundle application
         shell: powershell
-        run: C:/poetry/bin/poetry.bat run pyinstaller --onefile pdf_crypt.py
+        run: C:/poetry/bin/poetry.bat run pyinstaller -w --onefile pdf_crypt.py
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
