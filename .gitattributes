@@ -4,6 +4,7 @@
 *.md           text
 *.py           text
 *.toml         text
+*.yml          text
 .earthignore   text
 .gitattributes text
 .gitignore     text
