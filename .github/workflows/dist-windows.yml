@@ -23,7 +23,7 @@ jobs:
       #  run: C:/poetry/bin/poetry.bat run black --check .
       - name: Run PyInstaller
         shell: powershell
-        run: C:/poetry/bin/poetry.bat run pyinstaller -w --onefile pdf_crypt.py
+        run: C:/poetry/bin/poetry.bat run pyinstaller --onefile pdf_crypt.py
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
