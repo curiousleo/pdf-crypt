@@ -11,7 +11,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
       - name: Install Python
-        run: choco install python --version 3.9.5 -y
+        run: choco upgrade python --version 3.9.5 -y
       - name: Install Poetry
         run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
       - name: Show Poetry version
