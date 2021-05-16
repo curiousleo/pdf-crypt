@@ -8,6 +8,7 @@ authors = ["curiousleo <curiousleo@users.noreply.github.com>"]
 python = "^3.8"
 pikepdf = "^2.11.4"
 black = "^21.5b0"
+pyinstaller = "^4.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

@@ -2,8 +2,9 @@
 # Details: https://git-scm.com/docs/gitattributes#_text
 *.lock         text
 *.md           text
-*.opts         text
 *.py           text
 *.toml         text
+.earthignore   text
 .gitattributes text
 .gitignore     text
+Earthfile      text
