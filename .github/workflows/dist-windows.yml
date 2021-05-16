@@ -13,13 +13,17 @@ jobs:
       - name: Install Poetry
         run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
       - name: Show Poetry version
-        run: C:/poetry/bin/poetry version
+        shell: powershell
+        run: C:\poetry\bin\poetry.bat version
       - name: Install dependencies
-        run: C:/poetry/bin/poetry install
+        shell: powershell
+        run: C:/poetry/bin/poetry.bat install
       - name: Check formatting with Black
-        run: C:/poetry/bin/poetry run black --check .
+        shell: powershell
+        run: C:/poetry/bin/poetry.bat run black --check .
       - name: Run PyInstaller
-        run: C:/poetry/bin/poetry run pyinstaller -w --onefile pdf_crypt.py
+        shell: powershell
+        run: C:/poetry/bin/poetry.bat run pyinstaller -w --onefile pdf_crypt.py
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
