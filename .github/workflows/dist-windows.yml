@@ -10,16 +10,14 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
-      - name: Install Python
-        run: choco upgrade python --version 3.9.5 --yes --no-progress
-      - name: Debug
-        run: ls -R C:\hostedtoolcache\windows\Python\3.9.5\x64
-      - name: Install Poetry
-        run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-      - name: Show Poetry version
+      - name: Install Python and Poetry
+        run: |
+          choco upgrade python --version 3.9.5 --yes --no-progress
+          curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+      - name: Set up Poetry
         shell: powershell
-        run: C:\poetry\bin\poetry.bat version
-      - name: Install dependencies
+        run: poetry env use C:\hostedtoolcache\windows\Python\3.9.5\x64\python.exe
+      - name: Install project dependencies
         shell: powershell
         run: C:/poetry/bin/poetry.bat install
       #- name: Check formatting with Black
