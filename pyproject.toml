@@ -5,7 +5,7 @@ description = ""
 authors = ["curiousleo <curiousleo@users.noreply.github.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 pikepdf = "^2.11.4"
 black = "^21.5b0"
 pyinstaller = "^4.3"
