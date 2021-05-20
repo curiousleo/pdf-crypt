@@ -1,5 +1,7 @@
 name: Bundle for Windows
-on: release
+on:
+  release:
+    types: [created]
 jobs:
   dist:
     runs-on: windows-latest
@@ -10,10 +12,11 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
-      - name: Install Python and Poetry
+      - name: Install Python, Poetry, UPX
         run: |
           choco upgrade python --version 3.9.5 --yes --no-progress
           curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+          choco install upx
       - name: Set up Poetry
         shell: powershell
         run: C:/poetry/bin/poetry.bat env use C:\hostedtoolcache\windows\Python\3.9.5\x64\python.exe
