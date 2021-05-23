@@ -1,5 +1,6 @@
 name: Bundle for Windows
 on:
+  pull_request:
   release:
     types: [created]
 jobs:
